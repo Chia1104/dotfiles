@@ -22,6 +22,7 @@ dotfiles/
 │           └── uv.env.fish
 ├── .gitignore
 ├── install.sh          # Symlink installer script
+├── upgrade-node.sh     # Node.js version upgrade helper
 └── README.md
 ```
 
@@ -59,6 +60,25 @@ The install script will:
 ### GitHub CLI (`config/gh/`)
 
 - Default protocol and account settings
+
+### Scripts
+
+#### `upgrade-node.sh`
+
+A helper script that upgrades Node.js via NVM while preserving all globally installed packages.
+
+Usage:
+
+```sh
+./upgrade-node.sh v24.14.0
+```
+
+What it does:
+
+1. Detects the current Node.js version and its global packages
+2. Installs the specified new version via NVM
+3. Sets the new version as the default
+4. Reinstalls all global packages under the new version
 
 ## Prerequisites
 

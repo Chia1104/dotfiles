@@ -39,6 +39,9 @@ link_file "$DOTFILES_DIR/zsh/.zprofile" "$HOME/.zprofile"
 # Git
 link_file "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
 
+# Scripts
+link_file "$DOTFILES_DIR/upgrade-node.sh" "$HOME/upgrade-node.sh"
+
 # ~/.config
 mkdir -p "$HOME/.config"
 [ -d "$DOTFILES_DIR/config/gh" ]   && link_file "$DOTFILES_DIR/config/gh"   "$HOME/.config/gh"
