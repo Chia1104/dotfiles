@@ -1,0 +1,9 @@
+.DS_Store
+*.backup
+*.zwc
+.zcompdump*
+.zsh_history
+.zsh_sessions/
+*.local
+**/*secret*
+**/*token*
