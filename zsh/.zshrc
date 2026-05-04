@@ -27,13 +27,13 @@ typeset -U path
 
 path=(
   /opt/homebrew/bin
-  /opt/homebrew/opt/postgresql@16/bin
+  /opt/homebrew/opt/postgresql@18/bin
   /opt/homebrew/opt/ruby/bin
   $HOME/.console-ninja/.bin
   $HOME/.ex-i18n
   $HOME/.gem/bin
   $HOME/.antigravity/antigravity/bin
-  $HOME/Library/pnpm
+  $HOME/Library/pnpm/bin
   $HOME/Library/Android/sdk/emulator
   $HOME/Library/Android/sdk/platform-tools
   $path
@@ -85,6 +85,10 @@ _load_nvm() {
 }
 
 nvm() { _load_nvm; nvm "$@"; }
+
+# keep PNPM_HOME pnpm ahead of nvm global pnpm
+PNPM_BIN="$PNPM_HOME/bin"
+[[ -d "$PNPM_BIN" ]] && path=($PNPM_BIN $path)
 
 # ============================================================================
 # SDKMAN
