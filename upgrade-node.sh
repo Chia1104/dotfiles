@@ -4,7 +4,7 @@
 . $HOME/.nvm/nvm.sh
 
 if [ $# -eq 0 ]; then
-    echo "Error: You must pass the Node.js version to upgrade as an argument E.g.: v24.14.0"
+    echo "Error: You must pass the Node.js version to upgrade as an argument E.g.: v20.10.0"
     exit 1
 fi
 
@@ -39,4 +39,8 @@ echo "Installing global node modules..."
 
 npm install -g "${global_lib_folders[@]}"
 
-echo "Node.js has been upgraded successfully!"
+echo "Setting min-release-age to 1"
+
+npm config set min-release-age 1 --location=global
+
+echo "Node.js has been upgraded successfully!!!"
